@@ -120,10 +120,9 @@ export default function Report() {
                     <label className="block text-green-900 font-semibold mb-1">Title</label>
                     <input
                         type="text"
-                        value="we love this culture"
                         {...register('title', { required: 'title is required' })}
                         className="input input-bordered w-full px-3 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
-                        placeholder="e.g., Waste Management"
+                        placeholder="e.g., Pashupatinath"
                     />
                     {errors.purpose && (
                         <p className="text-red-600 mt-1">{errors.title.message}</p>
@@ -135,10 +134,9 @@ export default function Report() {
                     <label className="block text-green-900 font-semibold mb-1">Description</label>
                     <textarea
                         rows={4}
-                        value="manage hunu paro hai ta"
                         {...register('description', { required: 'Description is required' })}
                         className="input input-bordered w-full px-3 py-2 border border-green-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 resize-none"
-                        placeholder="Describe the issue..."
+                        placeholder="Describe the title..."
                     />
                     {errors.description && (
                         <p className="text-red-600 mt-1">{errors.description.message}</p>
