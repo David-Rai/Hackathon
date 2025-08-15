@@ -12,12 +12,11 @@ import Explore from './routes/Explore.jsx'
 import Home from './routes/Home.jsx'
 import Feature from './routes/Feature.jsx'
 import Home2 from './routes/Home2.jsx'
-import Signin from './routes/Signin.jsx'
 import Map from './routes/Map.jsx'
 import About from './routes/About.jsx'
 import MapCoords from './routes/MapCoords.jsx'
 import Signup from './routes/Signup.jsx'
-
+import Signin from './routes/Signin.jsx'
 
 const router = createBrowserRouter([
   {
