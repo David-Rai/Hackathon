@@ -8,8 +8,10 @@ const CultureDetails = () => {
     console.log(culture)
 
     return (
-        <main className='main'>
-            <CultureList c={culture} />
+        <main className='main flex justify-center'>
+            <div className='w-[60%]'>
+                <CultureList c={culture} />
+            </div>
         </main>
     )
 }

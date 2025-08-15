@@ -10,7 +10,7 @@ import { FaRegThumbsUp, FaRegCommentDots, FaShare, FaCheck } from "react-icons/f
 import { useSocket } from '../context/SocketContext.jsx'
 import { useUser } from '../context/UserContext.jsx'
 
-const CultureList = ({ c }) => {
+const CultureList = ({ c, type }) => {
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [showChatBox, setShowChatBox] = useState(false);
   const [comments, setComments] = useState([]);
@@ -139,16 +139,22 @@ const CultureList = ({ c }) => {
           <img
             className="h-[40px] rounded-full w-[40px]"
             src={c.user_image_url || "https://thispersondoesnotexist.com"} alt="" />
-          <p className="font-semibold text-gray-700 md:text-md text-2xl capitalize">{c.username}</p>
+          <p className="font-semibold text-gray-700 md:text-md text-2xl capitalize">{type === "ai" ? "AI Suggestion" : c.username}</p>
         </div>
         <p className="hidden md:inline">{new Date(c.created_at).toLocaleString()}</p>
       </div>
 
       {/* Content */}
       <div className="mb-3 flex flex-col sm:flex-row justify-between sm:items-center">
-        <div className="">
-          <h2 className="text-xl font-semibold text-gray-800">{c.title}</h2>
-          <p className="text-gray-700 mt-1 max-h-[100px] overflow-clip">{c.description}</p>
+        <div className="sm:w-[60%]">
+          <h2 className="text-xl font-semibold text-gray-800">
+            {c.title
+            }
+          </h2>
+
+          <div className="text-gray-700 mt-1  h-auto">
+            {c.description}
+          </div>
         </div>
 
         <button className="btn2 bg-(--secondary) text-white hover:bg-white hover:text-black 
@@ -214,14 +220,14 @@ const CultureList = ({ c }) => {
               placeholder="Comment"
               className="w-[80%] h-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-              <button
-                onClick={() => handleComment(c)}
-                className="bg-blue-600 h-[60px]
+            <button
+              onClick={() => handleComment(c)}
+              className="bg-blue-600 h-[60px]
                 flex items-center justify-center
                 text-white w-[60px] rounded-md hover:bg-blue-700"
-              >
-                <IoSend size={20}/>
-              </button>
+            >
+              <IoSend size={20} />
+            </button>
           </div>
         </div>
       )}
@@ -244,14 +250,14 @@ const CultureList = ({ c }) => {
               placeholder="Ask questions..."
               className="w-[80%] h-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-              <button
-                onClick={() => handleChat(c)}
-                className="bg-blue-600 h-[60px]
+            <button
+              onClick={() => handleChat(c)}
+              className="bg-blue-600 h-[60px]
                 flex items-center justify-center
                 text-white w-[60px] rounded-md hover:bg-blue-700"
-              >
-                <IoSend size={20}/>
-              </button>
+            >
+              <IoSend size={20} />
+            </button>
           </div>
 
         </div>

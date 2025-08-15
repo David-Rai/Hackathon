@@ -2,6 +2,7 @@ import logo from '../assets/icon.svg'
 import mainlogo from '../assets/mainlogo.svg'
 import { useNavigate } from 'react-router'
 import React from 'react'
+import SuggestionCulture from '../components/SuggestionCulture.jsx'
 import { useEffect, useState, useRef } from 'react'
 import { useSocket } from '../context/SocketContext.jsx'
 import { useUser } from '../context/UserContext.jsx'
@@ -116,11 +117,11 @@ const Map = () => {
         <div>
           {
             isMobile ? (
-              <img src={logo} className='w-[60px]'/>
+              <img src={logo} className='w-[60px] cursor-pointer' onClick={() => navigate('/')} />
             )
               :
               (
-                <img src={mainlogo} className='w-[160px]' />
+                <img src={mainlogo} className='w-[160px] cursor-pointer' onClick={() => navigate('/')} />
               )
           }
 
@@ -158,7 +159,7 @@ const Map = () => {
         <div className='sm:w-[80%] md:w-[70%]'>
           {
             suggestions.length > 0 && suggestions.map((s, index) => {
-              return <CultureList c={s} key={index} />
+              return <SuggestionCulture c={s} key={index} />
             })
           }
         </div>

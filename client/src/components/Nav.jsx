@@ -57,7 +57,7 @@ const Nav = () => {
                   <NavLink onClick={() => navigate(`/profile/${user.id}`)}>Profile</NavLink>
                 </li>
                 <li>
-                  <NavLink onClick={() => navigate("/postculture")}>post</NavLink>
+                  <NavLink onClick={() => navigate("/postculture")}>Post</NavLink>
                 </li>
               </ul>
             </div>

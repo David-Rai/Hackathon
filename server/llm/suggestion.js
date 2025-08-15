@@ -22,7 +22,7 @@ async function suggestion(data) {
         "recommendations": [
           {
             "title": "Name of the culture",
-            "description": "A concise but rich description that combines origin, traditions, language, food, and festivals, tailored to the user's location and preferences",
+            "description": "two line descriptopn of title culture",
             "image_url": "A valid, realistic, publicly accessible image URL ending with .jpg, .jpeg, or .png from any known source (e.g., unsplash.com, pexels.com, pixabay.com, or similar)",
             "lat": "Latitude of the culture's main region",
             "lng": "Longitude of the culture's main region"
