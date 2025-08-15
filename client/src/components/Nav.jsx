@@ -36,7 +36,9 @@ const Nav = () => {
           <div className="max-w-7xl mx-auto flex justify-between items-center h-[40px]">
             <div className='flex items-center justify-between gap-[40px]'>
               {/* Logo */}
-              <div className="h-full w-auto flex items-center justify-center shrink-0">
+              <div className="h-full w-auto flex items-center justify-center shrink-0 cursor-pointer"
+              onClick={()=> navigate("/")}
+              >
                 <img src={mainlogo} className='w-[160px]' />
               </div>
 
@@ -99,11 +101,18 @@ const Nav = () => {
           ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}
         `}>
             <NavLink
+              to="/"
+              className="mobile-nav"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </NavLink>
+            <NavLink
               to="/feature"
               className="mobile-nav"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Features ho hai
+              Features
             </NavLink>
             <NavLink
               to="/about"

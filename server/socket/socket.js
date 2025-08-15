@@ -68,7 +68,7 @@ export const handleSocket = (io) => {
                 const pq = "select image_url from users where id = ?"
                 const [image] = await db.execute(pq, [user_id])
 
-                console.log(image[0])
+                // console.log(image[0])
 
                 //storing the data into the database
                 const q = 'insert into cultures (title,description,lat,lng,username,user_id,image_url,user_image_url) values (?,?,?,?,?,?,?,?)'
@@ -146,7 +146,8 @@ export const handleSocket = (io) => {
 
             //sending to the llm
             const suggestions = await suggestion(data)
-            console.log(suggestions)
+            // console.log(suggestions)
+            
             client.emit("ai-suggestions", suggestions)
         })
     })

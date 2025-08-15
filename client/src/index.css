@@ -21,7 +21,7 @@
     }
 
     .mobile-nav {
-        @apply text-sm py-2 transition-colors text-[#5b5b5b] duration-200 border-b-2
+        @apply text-sm py-2 transition-colors text-[#5b5b5b] duration-200
     }
 
     .btn1 {

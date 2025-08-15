@@ -41,8 +41,8 @@ const Chats = ({ c }) => {
 
     console.log(c.answer)
     return (
-      <div className="flex justify-end my-2">
-        <div className="bg-blue-500 text-white p-3 rounded-lg max-w-xs break-words">
+      <div className="flex justify-start my-2">
+        <div className="text-black p-3 rounded-lg max-w-xs break-words bg-white shadow-sm">
           {/* {typeof c.answer === 'object' ? JSON.stringify(c.answer) : c.answer} */}
           {c.answer.answer}
         </div>
@@ -54,7 +54,7 @@ const Chats = ({ c }) => {
   // If c.type is user, render question on the left
   if (c.type === 'user') {
     return (
-      <div className="flex justify-start my-2">
+      <div className="flex justify-end my-2">
         <div className="bg-gray-200 p-3 rounded-lg max-w-xs break-words">
           {c.question}
         </div>

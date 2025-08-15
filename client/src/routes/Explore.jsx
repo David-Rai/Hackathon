@@ -1,3 +1,4 @@
+import logo from '../assets/icon.svg'
 import mainlogo from '../assets/mainlogo.svg'
 import { useNavigate } from 'react-router'
 import React from 'react'
@@ -14,6 +15,17 @@ const Map = () => {
   const { user, setUser } = useUser()
   const [suggestions, setSuggestions] = useState([])
   const coordRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  //device recogination
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true)
+      console.log("Mobile device (based on width)");
+    } else {
+      setIsMobile(false)
+    }
+  }, [])
 
   //Socket connection
   useEffect(() => {
@@ -102,7 +114,16 @@ const Map = () => {
       <nav className="w-full px-6 py-4 bg-(--bg-secondary) relative h-[15vh] flex justify-between items-center">
         {/* Logo */}
         <div>
-          <img src={mainlogo} className='w-[160px]' />
+          {
+            isMobile ? (
+              <img src={logo} className='w-[60px]'/>
+            )
+              :
+              (
+                <img src={mainlogo} className='w-[160px]' />
+              )
+          }
+
         </div>
 
         {/* Center */}

@@ -1,4 +1,5 @@
 import { FaHandsHelping } from "react-icons/fa";
+import { IoSend } from "react-icons/io5";
 import { BiLike } from "react-icons/bi";
 import Chats from '../components/Chats.jsx'
 import URL from '../../config';
@@ -131,7 +132,7 @@ const CultureList = ({ c }) => {
 
 
   return (
-    <div className="bg-gray-50 shadow-md rounded-2xl p-5 border border-gray-200 mt-5">
+    <div className="w-full bg-gray-50 shadow-md rounded-2xl p-5 border border-gray-200 mt-5">
       {/* Header */}
       <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
         <div className="flex items-center justify-center gap-3">
@@ -147,7 +148,7 @@ const CultureList = ({ c }) => {
       <div className="mb-3 flex flex-col sm:flex-row justify-between sm:items-center">
         <div className="">
           <h2 className="text-xl font-semibold text-gray-800">{c.title}</h2>
-          <p className="text-gray-700 mt-1">{c.description}</p>
+          <p className="text-gray-700 mt-1 max-h-[100px] overflow-clip">{c.description}</p>
         </div>
 
         <button className="btn2 bg-(--secondary) text-white hover:bg-white hover:text-black 
@@ -207,23 +208,21 @@ const CultureList = ({ c }) => {
           </div>
 
           {/* Comment Input */}
-          <div>
-            <textarea
+          <div className="flex items-center justify-center h-[60px] gap-2">
+            <input
               ref={commentRef}
-              placeholder="Write a comment..."
-              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              rows="2"
+              placeholder="Comment"
+              className="w-[80%] h-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            <div className="flex justify-end mt-2">
               <button
                 onClick={() => handleComment(c)}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                className="bg-blue-600 h-[60px]
+                flex items-center justify-center
+                text-white w-[60px] rounded-md hover:bg-blue-700"
               >
-                Post
+                <IoSend size={20}/>
               </button>
-            </div>
           </div>
-
         </div>
       )}
 
@@ -239,21 +238,20 @@ const CultureList = ({ c }) => {
           }
 
           {/* Chat Input */}
-          <div>
-            <textarea
+          <div className="flex items-center justify-center h-[60px] gap-2">
+            <input
               ref={chatRef}
-              placeholder="Write a comment..."
-              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              rows="2"
+              placeholder="Ask questions..."
+              className="w-[80%] h-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            <div className="flex justify-end mt-2">
               <button
                 onClick={() => handleChat(c)}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                className="bg-blue-600 h-[60px]
+                flex items-center justify-center
+                text-white w-[60px] rounded-md hover:bg-blue-700"
               >
-                send
+                <IoSend size={20}/>
               </button>
-            </div>
           </div>
 
         </div>

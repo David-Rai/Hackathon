@@ -123,7 +123,7 @@ const Profile = () => {
                 className="bg-white rounded-xl border border-gray-300 shadow-md p-4 md:p-6 space-y-4"
             >
                 {/* Content Area: user info left, nested routes right */}
-                <div className="flex flex-col md:flex-row gap-6 bg-gray-100 rounded-md p-4">
+                <div className="flex flex-col md:flex-row gap-6 bg-gray-100 rounded-md p-2">
                     {/* User details (left side) */}
                     <aside className="md:w-1/3 bg-white p-6 rounded-md shadow-sm text-gray-800 h-[60vh] flex flex-col">
                         <h2 className="text-lg font-semibold mb-4 border-b pb-2">User Details</h2>
@@ -147,14 +147,17 @@ const Profile = () => {
 
 
                     {/* cultures */}
-                    <div className="md:w-2/3 p-4 rounded-md">
+                    <div className="md:w-2/3 w-full p-4 rounded-md">
                         {
                             cultures.length > 0 && cultures.map((c, index) => {
                                 return <CultureList c={c} key={index} />
                             })
                         }
                     </div>
+
                 </div>
+
+
             </section>
 
 

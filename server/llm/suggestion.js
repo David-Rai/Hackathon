@@ -60,7 +60,7 @@ async function suggestion(data) {
         for (const r of suggestions.recommendations) {
             const images = await getImage(r.title);
             r.image_url = images[2]; // use first image, adjust as needed
-            console.log(images)
+            // console.log(images)
         }
         return suggestions;
 
