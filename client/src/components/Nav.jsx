@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../assets/icon.svg'
 import mainlogo from '../assets/mainlogo.svg'
 import { TfiAlignRight, TfiClose } from "react-icons/tfi";
 import { useState, useEffect } from 'react'
@@ -11,6 +12,17 @@ const Nav = () => {
   const [isUser, setIsUser] = useState(false)
   const { user, setUser } = useUser()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  //device recogination
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true)
+      console.log("Mobile device (based on width)");
+    } else {
+      setIsMobile(false)
+    }
+  }, [])
 
   //skipping the login
   useEffect(() => {
@@ -37,9 +49,18 @@ const Nav = () => {
             <div className='flex items-center justify-between gap-[40px]'>
               {/* Logo */}
               <div className="h-full w-auto flex items-center justify-center shrink-0 cursor-pointer"
-              onClick={()=> navigate("/")}
+                onClick={() => navigate("/")}
               >
-                <img src={mainlogo} className='w-[160px]' />
+                {
+                  isMobile ? (
+                    <img src={logo} className='w-[60px] cursor-pointer' onClick={() => navigate('/')} />
+                  )
+                    :
+                    (
+                      <img src={mainlogo} className='w-[160px] cursor-pointer' onClick={() => navigate('/')} />
+                    )
+                }
+
               </div>
 
               {/* Navigation Links - Desktop */}

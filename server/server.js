@@ -14,11 +14,9 @@ import cors from 'cors'
 
 configDotenv()//Env configuration   
 
-
 //cors options
 const corsOptions = {
-    // origin: 'http://localhost:5173',
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://bq6bt2d7-5173.inc1.devtunnels.ms'],
     credentials: true
 };
 

@@ -137,7 +137,7 @@ const CultureList = ({ c, type }) => {
       <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
         <div className="flex items-center justify-center gap-3">
           <img
-            className="h-[40px] rounded-full w-[40px]"
+            className="h-[40px] rounded-full w-[40px] object-cover"
             src={c.user_image_url || "https://thispersondoesnotexist.com"} alt="" />
           <p className="font-semibold text-gray-700 md:text-md text-2xl capitalize">{type === "ai" ? "AI Suggestion" : c.username}</p>
         </div>

@@ -21,6 +21,7 @@ const Profile = () => {
     //socket connection handling
     useEffect(() => {
         if (!socket) return
+        // if(!user) return
 
         //getting all cultures
         socket.emit("get-cultures", { id: user.id })
