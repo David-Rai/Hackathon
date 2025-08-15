@@ -115,7 +115,6 @@ const Map = () => {
 
         {/* Extra controls  */}
         <div>
-          control
         </div>
       </nav>
 

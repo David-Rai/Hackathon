@@ -144,7 +144,7 @@ const CultureList = ({ c }) => {
       </div>
 
       {/* Content */}
-      <div className="mb-3 flex flex-row justify-between items-center">
+      <div className="mb-3 flex flex-col sm:flex-row justify-between sm:items-center">
         <div className="">
           <h2 className="text-xl font-semibold text-gray-800">{c.title}</h2>
           <p className="text-gray-700 mt-1">{c.description}</p>

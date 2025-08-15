@@ -147,7 +147,7 @@ const Profile = () => {
 
 
                     {/* cultures */}
-                    <div className="md:w-2/3 p-4 rounded-md shadow-sm">
+                    <div className="md:w-2/3 p-4 rounded-md">
                         {
                             cultures.length > 0 && cultures.map((c, index) => {
                                 return <CultureList c={c} key={index} />
