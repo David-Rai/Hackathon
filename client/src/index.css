@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+* {
+    font-family: "Inter";
+}
+
+:root {
+    --primary-red: #800000;
+    --bg-secondary: #FFF1D6;
+    --primary: #800000;
+    --secondary: #FF8800;
+    --secondary-orange: #FF8800;
+    --inter: "inter";
+    /* --demo: rgba(35, 128, 71, 0.539); */
+    /* --color-random: rgba(35, 128, 71, 0.539); */
+}
+
+@layer components {
+    .main {
+        @apply h-screen w-full bg-[#FFFCF6]
+    }
+
+    .mobile-nav {
+        @apply text-sm py-2 transition-colors text-[#5b5b5b] duration-200
+    }
+
+    .btn1 {
+        @apply cursor-pointer h-[35px] w-[80px] rounded-md border-[0.4px] bg-(--primary) text-white
+    }
+
+    .btn2 {
+        @apply cursor-pointer h-[35px] w-[80px] rounded-md bg-white border-[0.4px] border-(--secondary) text-(--primary)
+    }
+
+    .input {
+        @apply border-[1px] border-gray-700 rounded-md
+    }
+
+    .inputContainer {
+        @apply w-full
+    }
+
+    .option-icon {
+        @apply text-2xl
+    }
+
+    .icon-detail {
+        @apply hidden md:flex
+    }
+
+    .option-button {
+        @apply flex items-center justify-center md:justify-start gap-3 px-4 py-2 w-full hover:bg-green-800 rounded-md transition duration-200
+    }
+}
