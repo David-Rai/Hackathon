@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+* {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #800000;
+    --bg-secondary: #FFF1D6;
+    --primary: #800000;
+    --secondary: #FF8800;
+    --secondary-orange: #FF8800;
+    --inter: "inter";
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --bg-primary: #ffffff;
+    --bg-accent: #f8fafc;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-accent);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+@layer components {
+    .main {
+        @apply min-h-screen w-full bg-[#FFFCF6]
+    }
+
+    .mobile-nav {
+        @apply text-sm py-3 px-4 transition-all duration-200 text-[#5b5b5b] hover:text-[#800000] hover:bg-[#FFF1D6] rounded-lg
+    }
+
+    .btn1 {
+        @apply cursor-pointer h-[40px] px-6 rounded-lg border-0 bg-[#800000] text-white font-medium transition-all duration-200 hover:bg-[#660000] hover:shadow-md active:scale-95
+    }
+
+    .btn2 {
+        @apply cursor-pointer h-[40px] px-6 rounded-lg bg-white border border-[#FF8800] text-[#800000] font-medium transition-all duration-200 hover:bg-[#FF8800] hover:text-white hover:shadow-md active:scale-95
+    }
+
+    .btn-secondary {
+        @apply cursor-pointer h-[40px] px-6 rounded-lg bg-[#FF8800] text-white font-medium transition-all duration-200 hover:bg-[#e67e00] hover:shadow-md active:scale-95
+    }
+
+    .input {
+        @apply border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#800000] focus:border-transparent transition-all duration-200
+    }
+
+    .inputContainer {
+        @apply w-full
+    }
+
+    .option-icon {
+        @apply text-2xl
+    }
+
+    .icon-detail {
+        @apply hidden md:flex
+    }
+
+    .option-button {
+        @apply flex items-center justify-center md:justify-start gap-3 px-4 py-3 w-full hover:bg-[#FFF1D6] rounded-lg transition-all duration-200
+    }
+
+    .card {
+        @apply bg-white rounded-xl shadow-md border border-gray-100 p-6 transition-all duration-200 hover:shadow-lg
+    }
+
+    .nav-link {
+        @apply text-[#5b5b5b] font-medium transition-all duration-200 hover:text-[#800000] relative
+    }
+
+    .nav-link.active {
+        @apply text-[#800000] font-semibold
+    }
+
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #800000;
+        border-radius: 1px;
+    }
+
+    .container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+    }
+
+    .section-padding {
+        @apply py-12 sm:py-16 lg:py-20
+    }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-[#800000] to-[#FF8800] bg-clip-text text-transparent
+    }
+
+    .glass-effect {
+        @apply bg-white/80 backdrop-blur-sm border border-white/20
+    }
+
+    .mobile-menu {
+        @apply fixed inset-0 z-50 lg:hidden
+    }
+
+    .mobile-menu-overlay {
+        @apply fixed inset-0 bg-black/50 backdrop-blur-sm
+    }
+
+    .mobile-menu-content {
+        @apply fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out
+    }
+
+    .mobile-menu-content.open {
+        @apply translate-x-0
+    }
+
+    .mobile-menu-content.closed {
+        @apply translate-x-full
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 2px solid #800000;
+    outline-offset: 2px;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    .text-responsive-xl {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 641px) {
+    .text-responsive-xl {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text-responsive-xl {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+}

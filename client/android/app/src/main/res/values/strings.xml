@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Gloculture</string>
+    <string name="title_activity_main">Gloculture</string>
+    <string name="package_name">com.davidrai.gloculture</string>
+    <string name="custom_url_scheme">com.davidrai.gloculture</string>
+</resources>
